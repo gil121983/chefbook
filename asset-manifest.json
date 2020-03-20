@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/chefbook/static/css/main.81fa9196.chunk.css",
+    "main.js": "/chefbook/static/js/main.f5c10c37.chunk.js",
+    "main.js.map": "/chefbook/static/js/main.f5c10c37.chunk.js.map",
+    "runtime-main.js": "/chefbook/static/js/runtime-main.3902e6b5.js",
+    "runtime-main.js.map": "/chefbook/static/js/runtime-main.3902e6b5.js.map",
+    "static/js/2.8add4d5b.chunk.js": "/chefbook/static/js/2.8add4d5b.chunk.js",
+    "static/js/2.8add4d5b.chunk.js.map": "/chefbook/static/js/2.8add4d5b.chunk.js.map",
+    "index.html": "/chefbook/index.html",
+    "precache-manifest.87a85a7b0f0e023af6ac489d81fbb985.js": "/chefbook/precache-manifest.87a85a7b0f0e023af6ac489d81fbb985.js",
+    "service-worker.js": "/chefbook/service-worker.js",
+    "static/css/main.81fa9196.chunk.css.map": "/chefbook/static/css/main.81fa9196.chunk.css.map",
+    "static/js/2.8add4d5b.chunk.js.LICENSE.txt": "/chefbook/static/js/2.8add4d5b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.3902e6b5.js",
+    "static/js/2.8add4d5b.chunk.js",
+    "static/css/main.81fa9196.chunk.css",
+    "static/js/main.f5c10c37.chunk.js"
+  ]
+}
