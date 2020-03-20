@@ -1,5 +1,16 @@
+body {
+  background-image: url("https://www.edamam.com/web-img/b28/b28acc0eed7e65de535d36954006f358.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #282c34;
+}
 .App {
+  background-image: linear-gradient(to right, #f06406 0%, #e1fe40 100%);
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center;
+  justify-content: center; */
 }
 
 .App-logo {
@@ -7,32 +18,38 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  border-bottom: 1px solid #f06406;
 }
-
+.search-form {
+  background-color: #282c34;
+  min-height: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submit-btn {
+  background-image: linear-gradient(to right, #f06406 0%, #e1fe40 100%);
+}
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.results-div {
+  /* border: 4px solid blue; */
+  max-width: 1200px;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.recipe-div {
+  margin: 20px;
 }
