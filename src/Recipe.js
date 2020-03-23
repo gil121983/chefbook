@@ -35,11 +35,12 @@ const Recipe = ({ title, time, image, dietLabel, ingredients, healthLabels, calo
 
     return (
         <div className='recipe-div'>
-
-            <h2 onClick={openRecipe}>{title}</h2>
-            <div>
-                <p></p>
-                <p>{dietLabel} {(time) ? `${time} min'` : null}</p>
+            <div className='recipe-title'>
+                <h2 onClick={openRecipe}>{title}</h2>
+                <div>
+                    <p></p>
+                    <p>{dietLabel} {(time) ? `${time} min'` : null}</p>
+                </div>
             </div>
             <img src={image} onClick={openRecipe} />
         </div>

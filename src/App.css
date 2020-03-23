@@ -53,3 +53,6 @@ body {
 .recipe-div {
   margin: 20px;
 }
+.recipe-title {
+  height: 100px;
+}

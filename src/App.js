@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Header from './Header'
 import Recipe from './Recipe';
+import Pagination from './Pagination'
 import { v4 as uuidv4 } from 'uuid'
 import './App.css';
 
@@ -17,7 +18,6 @@ const App = () => {
   const observer = useRef()
   const lastElementRef = useCallback(node => {
     console.log(node);
-
   })
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const App = () => {
 
   return (
     <div className="App" >
-      <Header getSearch={getSearch} />
+      <Header />
       <form className="search-form" onSubmit={getSearch}>
         <input type="text" className="search-bar" value={search} onChange={updateSearch} />
         <button type="submoit" className="submit-btn">SEARCH</button>
@@ -99,9 +99,10 @@ const App = () => {
           }
         })}
       </div>
-      <div>
-        <button onClick={loadResults}>load more results</button>
-      </div>
+
+      <Pagination loadResults={loadResults} recipes={recipes} />
+
+
     </div>
   );
 }
