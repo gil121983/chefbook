@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Header from './Header'
 import Recipe from './Recipe';
+import { v4 as uuidv4 } from 'uuid'
 import './App.css';
 
 
@@ -11,29 +12,50 @@ const App = () => {
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState('');
   const [query, setQuery] = useState('')
+  const [page, setPage] = useState({ from: 0, to: 12 })
+
+  const observer = useRef()
+  const lastElementRef = useCallback(node => {
+    console.log(node);
+
+  })
 
   useEffect(() => {
     getServer()
-
-  }, [query])
+  }, [query, page])
 
   const getServer = async () => {
-    const exampleReq = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}`
-    const response = await fetch(exampleReq)
+
+    const { from, to } = page;
+    const URL_Req = `https://api.edamam.com/search?q=${query}&app_id=${APP_ID}&app_key=${APP_KEY}&from=${from}&to=${to}`
+    //console.log(URL_Req);
+
+    const response = await fetch(URL_Req)
     const data = await response.json()
-    setRecipes(data.hits);
-    console.log(data.hits);
+    setRecipes([...recipes, ...data.hits]);
+    //console.log(data.hits);
 
   }
   const updateSearch = e => {
     setSearch(e.target.value);
-    console.log(search);
-
   }
   const getSearch = e => {
     e.preventDefault()
+    setRecipes([])
     setQuery(search)
+    setPage({ from: 0, to: 12 })
   }
+
+
+
+
+
+  const loadResults = e => {
+    let nextFrom = page.from + 12;
+    let nextTo = page.to + 12;
+    setPage({ from: nextFrom, to: nextTo })
+  }
+
 
   return (
     <div className="App" >
@@ -43,19 +65,42 @@ const App = () => {
         <button type="submoit" className="submit-btn">SEARCH</button>
       </form>
       <div className="results-div">
-        {recipes.map(recipe => (
-          <Recipe
-            key={recipe.recipe.label}
-            title={recipe.recipe.label}
-            dietLabel={recipe.recipe.dietLabels}
-            image={recipe.recipe.image}
-            time={recipe.recipe.totalTime}
-            ingredients={recipe.recipe.ingredientLines}
-            healthLabels={recipe.recipe.healthLabels}
-            calories={recipe.recipe.calories}
-            cautions={recipe.recipe.cautions}
-          />
-        ))}
+        {recipes.map((recipe, index) => {
+          if (recipes.length === index + 1) {
+            console.log("last element")
+            return (
+              <Recipe
+                ref={lastElementRef}
+                key={uuidv4()}
+                title={recipe.recipe.label}
+                dietLabel={recipe.recipe.dietLabels}
+                image={recipe.recipe.image}
+                time={recipe.recipe.totalTime}
+                ingredients={recipe.recipe.ingredientLines}
+                healthLabels={recipe.recipe.healthLabels}
+                calories={recipe.recipe.calories}
+                cautions={recipe.recipe.cautions}
+              />
+            )
+          } else {
+            return (
+              <Recipe
+                key={uuidv4()}
+                title={recipe.recipe.label}
+                dietLabel={recipe.recipe.dietLabels}
+                image={recipe.recipe.image}
+                time={recipe.recipe.totalTime}
+                ingredients={recipe.recipe.ingredientLines}
+                healthLabels={recipe.recipe.healthLabels}
+                calories={recipe.recipe.calories}
+                cautions={recipe.recipe.cautions}
+              />
+            )
+          }
+        })}
+      </div>
+      <div>
+        <button onClick={loadResults}>load more results</button>
       </div>
     </div>
   );
