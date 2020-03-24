@@ -1,11 +1,21 @@
+* {
+  box-sizing: border-box;
+}
 body {
-  background-image: url("https://www.edamam.com/web-img/b28/b28acc0eed7e65de535d36954006f358.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: #282c34;
+  background-image: linear-gradient(to right, #f06406 0%, #e1fe40 100%);
+}
+.img-container {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.sushi {
+  width: inherit;
 }
 .App {
-  background-image: linear-gradient(to right, #f06406 0%, #e1fe40 100%);
+  background-image: #282c34;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -19,6 +29,7 @@ body {
 }
 
 .App-header {
+  z-index: 3;
   background-color: #282c34;
   min-height: 10vh;
   display: flex;
@@ -26,10 +37,12 @@ body {
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   color: white;
   border-bottom: 1px solid #f06406;
 }
 .search-form {
+  z-index: 3;
   background-color: #282c34;
   min-height: 5vh;
   display: flex;

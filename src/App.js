@@ -4,6 +4,7 @@ import Recipe from './Recipe';
 import Pagination from './Pagination'
 import { v4 as uuidv4 } from 'uuid'
 import './App.css';
+import sushi from './img/sushi.svg'
 
 
 const App = () => {
@@ -64,6 +65,9 @@ const App = () => {
         <input type="text" className="search-bar" value={search} onChange={updateSearch} />
         <button type="submoit" className="submit-btn">SEARCH</button>
       </form>
+
+      <div className="img-container" ><img className='sushi' src={(recipes.length > 0) ? null : sushi} alt='' /></div>
+
       <div className="results-div">
         {recipes.map((recipe, index) => {
           if (recipes.length === index + 1) {
