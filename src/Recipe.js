@@ -1,7 +1,7 @@
 import React from 'react'
 import Swal from 'sweetalert2'
 
-const Recipe = ({ title, time, image, dietLabel, ingredients, healthLabels, calories, cautions }) => {
+const Recipe = ({ title, time, image, dietLabel, ingredients, healthLabels, calories, cautions, link, author }) => {
 
     const openRecipe = () => {
         Swal.fire({
@@ -14,16 +14,18 @@ const Recipe = ({ title, time, image, dietLabel, ingredients, healthLabels, calo
             <h3>Cautions:</h3>  
             ${cautions}
             <h3>Ingredients:</h3>  
-            ${ingredients}
+            ${ingredients}<br>
+            <a href=${link}>full recipe at ${author}</a>
             `,
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Recipe'
+            cancelButtonColor: '#3085d6',
+            confirmButtonText: 'Save Recipe',
+            cancelButtonText: 'ok'
         }).then((result) => {
             if (result.value) {
                 Swal.fire({
-                    title: 'You are redirected to recipe!',
+                    title: 'saved to favorites',
                     timer: 1500,
                     showConfirmButton: false,
                 }
@@ -38,12 +40,15 @@ const Recipe = ({ title, time, image, dietLabel, ingredients, healthLabels, calo
             <div className='recipe-title'>
                 <h2 onClick={openRecipe}>{title}</h2>
                 <div>
-                    <p></p>
-                    <p>{dietLabel} {(time) ? `${time} min'` : null}</p>
+                    <span style={subTitleStyle}>{(time) ? `⌛${time} min'` : null}</span>
+                    {dietLabel.map((label, index) => <span key={index} style={subTitleStyle}>✔{label} </span>)}
                 </div>
             </div>
             <img src={image} onClick={openRecipe} />
         </div>
     )
+}
+const subTitleStyle = {
+    margin: '5px',
 }
 export default Recipe
