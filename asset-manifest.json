@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/chefbook/static/css/main.271f7dde.chunk.css",
+    "main.css": "/chefbook/static/css/main.18278abf.chunk.css",
     "main.js": "/chefbook/static/js/main.8434c308.chunk.js",
     "main.js.map": "/chefbook/static/js/main.8434c308.chunk.js.map",
     "runtime-main.js": "/chefbook/static/js/runtime-main.3902e6b5.js",
@@ -8,9 +8,9 @@
     "static/js/2.4666a631.chunk.js": "/chefbook/static/js/2.4666a631.chunk.js",
     "static/js/2.4666a631.chunk.js.map": "/chefbook/static/js/2.4666a631.chunk.js.map",
     "index.html": "/chefbook/index.html",
-    "precache-manifest.4fce5270eab0fcfa38a7f41380f98a12.js": "/chefbook/precache-manifest.4fce5270eab0fcfa38a7f41380f98a12.js",
+    "precache-manifest.31864eaa907b4c601c3a59ba6ac13a5b.js": "/chefbook/precache-manifest.31864eaa907b4c601c3a59ba6ac13a5b.js",
     "service-worker.js": "/chefbook/service-worker.js",
-    "static/css/main.271f7dde.chunk.css.map": "/chefbook/static/css/main.271f7dde.chunk.css.map",
+    "static/css/main.18278abf.chunk.css.map": "/chefbook/static/css/main.18278abf.chunk.css.map",
     "static/js/2.4666a631.chunk.js.LICENSE.txt": "/chefbook/static/js/2.4666a631.chunk.js.LICENSE.txt",
     "static/media/avocado.png": "/chefbook/static/media/avocado.59291e7a.png",
     "static/media/sushi.svg": "/chefbook/static/media/sushi.57348151.svg"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.3902e6b5.js",
     "static/js/2.4666a631.chunk.js",
-    "static/css/main.271f7dde.chunk.css",
+    "static/css/main.18278abf.chunk.css",
     "static/js/main.8434c308.chunk.js"
   ]
 }
